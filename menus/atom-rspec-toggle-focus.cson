@@ -1,0 +1,22 @@
+# See https://atom.io/docs/latest/hacking-atom-package-word-count#menus for more details
+'context-menu':
+  'atom-text-editor': [
+    {
+      'label': 'Toggle atom-rspec-toggle-focus'
+      'command': 'atom-rspec-toggle-focus:toggle'
+    }
+  ]
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'atom-rspec-toggle-focus'
+      'submenu': [
+        {
+          'label': 'Toggle'
+          'command': 'atom-rspec-toggle-focus:toggle'
+        }
+      ]
+    ]
+  }
+]
