@@ -1,0 +1,3 @@
+'atom-text-editor':
+  'ctrl-alt-cmd-t': 'rspec-focus:add'
+  'ctrl-alt-cmd-z': 'rspec-focus:clear'

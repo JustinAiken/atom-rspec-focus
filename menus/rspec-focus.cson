@@ -1,0 +1,18 @@
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'RSpec Focus'
+      'submenu': [
+        {
+          'label': 'Add'
+          'command': 'rspec-focus:add'
+        }
+        {
+          'label': 'Clear'
+          'command': 'rspec-focus:clear'
+        }
+      ]
+    ]
+  }
+]

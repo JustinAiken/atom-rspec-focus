@@ -1,12 +1,15 @@
 {
-  "name": "atom-rspec-toggle-focus",
-  "main": "./lib/atom-rspec-toggle-focus",
+  "name": "rspec-focus",
+  "main": "./lib/rspec-focus",
   "version": "0.0.1",
-  "description": "Toggle focus tag in RSpec tests.",
+  "description": "Add/remove focus tag in RSpec tests.",
   "activationCommands": {
-    "atom-workspace": "atom-rspec-toggle-focus:toggle"
+    "atom-text-editor": [
+      "rspec-focus:add",
+      "rspec-focus:clear"
+    ]
   },
-  "repository": "https://github.com/traviskroberts/atom-rspec-toggle-focus",
+  "repository": "https://github.com/traviskroberts/atom-rspec-focus",
   "license": "MIT",
   "engines": {
     "atom": ">=0.174.0 <2.0.0"
