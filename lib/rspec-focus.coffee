@@ -11,6 +11,8 @@ module.exports =
 
   add: ->
     if editor = atom.workspace.getActiveTextEditor()
+      editor.moveToEndOfLine()
+
       regex = /(?:it|describe|context|feature|scenario).*do$/m
       cr = editor.getSelectedBufferRange()
       range = [[cr.end.row, cr.end.column], [0, 0]]
