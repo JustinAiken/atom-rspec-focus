@@ -5,12 +5,8 @@
       'label': 'RSpec Focus'
       'submenu': [
         {
-          'label': 'Add'
-          'command': 'rspec-focus:add'
-        }
-        {
-          'label': 'Clear'
-          'command': 'rspec-focus:clear'
+          'label': 'toggle'
+          'command': 'rspec-focus:toggle'
         }
       ]
     ]

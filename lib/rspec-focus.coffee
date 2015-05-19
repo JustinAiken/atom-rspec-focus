@@ -6,23 +6,20 @@ module.exports =
   activate: (state) ->
     @subscriptions = new CompositeDisposable
 
-    @subscriptions.add atom.commands.add 'atom-text-editor', 'rspec-focus:add': => @add()
-    @subscriptions.add atom.commands.add 'atom-text-editor', 'rspec-focus:clear': => @clear()
+    @subscriptions.add atom.commands.add 'atom-text-editor', 'rspec-focus:toggle': => @toggle()
 
-  add: ->
+  toggle: ->
     if editor = atom.workspace.getActiveTextEditor()
       editor.moveToEndOfLine()
 
-      regex = /(?:it|describe|context|feature|scenario).*do$/m
-      cr = editor.getSelectedBufferRange()
+      regex = /(?: it|describe|context|feature|scenario).*do$/m
+      cr    = editor.getSelectedBufferRange()
       range = [[cr.end.row, cr.end.column], [0, 0]]
 
       editor.backwardsScanInBufferRange regex, range, ({matchText, stop, replace}) ->
         if matchText.indexOf(', focus: true') == -1
           replacement = matchText.replace(/\sdo$/, ', focus: true do')
           replace(replacement)
-
-  clear: ->
-    if editor = atom.workspace.getActiveTextEditor()
-      editor.scan /, focus: true/g, (result) ->
-        result.replace('')
+        else
+          replacement = matchText.replace(', focus: true do', ' do')
+          replace(replacement)

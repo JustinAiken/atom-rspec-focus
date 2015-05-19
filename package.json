@@ -5,8 +5,7 @@
   "description": "Add/remove focus tag in RSpec tests.",
   "activationCommands": {
     "atom-text-editor": [
-      "rspec-focus:add",
-      "rspec-focus:clear"
+      "rspec-focus:toggle"
     ]
   },
   "repository": "https://github.com/traviskroberts/atom-rspec-focus",
